@@ -32,7 +32,7 @@ export type Field = {
   loading?: boolean;
   onChangeFunction?: string;
   validation?: Validation[];
-} & (Text | Textarea | Masked | Numeric | Currency | Phone | Datepicker | Dropdown | Checkbox | Radio | Switch);
+} & (Text | Textarea | Masked | Numeric | Currency | Phone | Dropdown | Datepicker | Checkbox | Radio | Switch);
 
 export type Text = {
   fieldId: string;
@@ -69,18 +69,20 @@ export type Phone = {
   type: 'phone';
 };
 
-export type Datepicker = {
-  fieldId: string;
-  type: 'datepicker';
-};
-
 export type Dropdown = {
   fieldId: string;
   type: 'dropdown';
-  optionsUrl?: string;
   optionLabel?: string;
   optionValue?: string;
+  optionsUrl?: string;
   options?: Options[];
+};
+
+export type Datepicker = {
+  fieldId: string;
+  type: 'datepicker';
+  fromYear?: number;
+  toYear?: number;
 };
 
 export type Checkbox = {

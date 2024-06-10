@@ -71,14 +71,14 @@ export function FormCollection({
     );
   }, [form, onChangeFields]);
 
-  const handleSubmit = (formData: any) => {
+  const handleSubmit = (values: z.infer<typeof schemaValidation>) => {
     console.log("handleSubmit");
     if (!isEmpty(manualErrors)) {
       manualErrors.forEach(({ name, type, message }: ManualErrors) => {
         form.setError(name, { type, message })
       });
     } else {
-      if (onSubmit) onSubmit(formData);
+      if (onSubmit) onSubmit(values);
     }
   };
 

@@ -32,7 +32,7 @@ const TextareaInput: React.FC<TextareaProps> = ({ form, item, onChangeFields, se
               className={cn(
                 "resize-none focus-visible:outline-none focus-visible:border-zinc-900 focus-visible:ring-0",
                 !isEmpty(getErrors(form.formState.errors, item.fieldId)) && "border-red-500 focus-visible:border-red-500",
-                (item.disabled || item.loading) && "disabled:pointer-events-none disabled:opacity-100 disabled:bg-gray-100",
+                (item.disabled || item.loading) && "disabled:pointer-events-none disabled:opacity-100 disabled:bg-gray-100 disabled:text-muted-foreground",
               )}
               disabled={item.disabled || item.loading}
               onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -55,7 +55,7 @@ const TextareaInput: React.FC<TextareaProps> = ({ form, item, onChangeFields, se
             />
             {item.loading && (
               <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                <Loader2 className="h-5 w-5 animate-spin opacity-50" />
+                <Loader2 className="h-4 w-4 text-muted-foreground animate-spin opacity-50" />
               </div>
             )}
           </div>
